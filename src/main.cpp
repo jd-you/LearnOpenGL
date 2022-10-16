@@ -58,7 +58,7 @@ int main()
     }    
 
     glEnable(GL_DEPTH_TEST);
-    Shader shader("D:\\Workspace\\opengl\\shader\\default.vs", "D:\\Workspace\\opengl\\shader\\default.frag");
+    Shader shader("C:\\OpenglWorkSpace\\workspace\\shader\\default.vs", "C:\\OpenglWorkSpace\\workspace\\shader\\default.frag");
 
     ViewParam viewParam = {
         .pos = glm::vec3(0.0f, 0.0f, 15.0f),
@@ -74,7 +74,7 @@ int main()
     Camera camera(&shader, viewParam, projectParam);
 
     // Model model("C:\\Users\\admin\\Desktop\\nanosuit\\nanosuit.obj");
-    Model model("D:\\Workspace\\opengl\\model\\model.pmx");
+    Model model("C:\\OpenglWorkSpace\\workspace\\model\\model.pmx");
 
     GLuint vao;
     glGenVertexArrays(1, &vao);
