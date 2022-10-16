@@ -10,6 +10,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/")
 find_package(GLFW3 REQUIRED)
 find_package(GLM REQUIRED)
 find_package(Assimp REQUIRED)
+find_package(GLAD REQUIRED)
+find_package(ZLIB REQUIRED)
 
 file(GLOB SOURCE_FILES src/*.c src/*.cpp)
 add_executable(main ${SOURCE_FILES})
@@ -19,12 +21,15 @@ include_directories(
     ${GLFW3_INCLUDE_DIR}
     ${GLM_INCLUDE_DIR}
     ${ASSIMP_INCLUDE_DIR}
+    ${GLAD_INCLUDE_DIR}
+    ${ZLIB_INCLUDE_DIR}
 )
 
 target_link_libraries(main 
     ${GLFW3_LIBRARY}
     ${ASSIMP_LIBRARY}
-    ${PROJECT_SOURCE_DIR}/lib/libz.a
+    ${GLAD_LIBRARY}
+    ${ZLIB_LIBRARY}
 )
 
 
